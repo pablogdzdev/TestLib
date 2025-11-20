@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import mx.pgdz.auth.LibUtils
 import mx.pgdz.testsdk.ui.theme.TestSDKTheme
 
 class MainActivity : ComponentActivity() {
@@ -27,6 +28,8 @@ class MainActivity : ComponentActivity() {
                     )
                     BuildConfig.MODEL_ENCRYPTION_IV
                 }
+                LibUtils.showToast(this, "mensaje con las llaves: ${BuildConfig.MODEL_ENCRYPTION_KEY} - ${BuildConfig.MODEL_ENCRYPTION_IV}")
+                LibUtils.setKeys(BuildConfig.MODEL_ENCRYPTION_KEY, BuildConfig.MODEL_ENCRYPTION_IV)
             }
         }
     }
